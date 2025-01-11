@@ -3,12 +3,21 @@ import { GitUrlInput } from "@/components/GitUrlInput";
 import { ExampleButton } from "@/components/ExampleButton";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
+import { RepositoryResults } from "@/components/RepositoryResults";
+import { useState } from "react";
 
 const EXAMPLE_REPOS = ["GitIngest", "FastAPI", "Flask", "Tldraw", "ApiAnalytics"];
 
 export default function Index() {
+  const [showResults, setShowResults] = useState(false);
+
   const handleExampleClick = (repo: string) => {
     console.log("Selected example:", repo);
+    setShowResults(true);
+  };
+
+  const handleIngest = () => {
+    setShowResults(true);
   };
 
   return (
@@ -25,7 +34,7 @@ export default function Index() {
             </p>
           </div>
 
-          <GitUrlInput />
+          <GitUrlInput onIngest={handleIngest} />
 
           <div className="w-full max-w-2xl space-y-6">
             <div className="space-y-2">
@@ -62,6 +71,8 @@ export default function Index() {
               </div>
             </div>
           </div>
+
+          {showResults && <RepositoryResults />}
 
           <p className="text-sm text-gray-500 mt-8">
             You can also replace 'hub' with 'ingest' in any GitHub URL

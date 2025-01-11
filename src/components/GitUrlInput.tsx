@@ -2,11 +2,16 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-export function GitUrlInput() {
+interface GitUrlInputProps {
+  onIngest?: () => void;
+}
+
+export function GitUrlInput({ onIngest }: GitUrlInputProps) {
   const [url, setUrl] = useState("");
 
   const handleIngest = () => {
     console.log("Ingesting:", url);
+    onIngest?.();
   };
 
   return (

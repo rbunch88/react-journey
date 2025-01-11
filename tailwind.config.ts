@@ -24,10 +24,9 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        cream: "#FFFBF5",
-        coral: {
-          DEFAULT: "#FFB4A2",
-          hover: "#FF9A80",
+        codeium: {
+          DEFAULT: "#00E7B9",
+          hover: "#00c49d",
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

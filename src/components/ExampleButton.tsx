@@ -9,7 +9,7 @@ export function ExampleButton({ name, onClick }: ExampleButtonProps) {
   return (
     <Button
       variant="outline"
-      className="bg-cream border-gray-300 hover:bg-gray-100 transition-colors"
+      className="bg-secondary border-gray-800 hover:border-codeium hover:bg-transparent hover:text-codeium transition-colors"
       onClick={onClick}
     >
       {name}

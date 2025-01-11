@@ -16,10 +16,10 @@ export function GitUrlInput() {
         placeholder="https://github.com/cyclotruc/gitingest"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
-        className="flex-1"
+        className="flex-1 bg-secondary border-gray-800 focus-visible:ring-codeium focus-visible:ring-offset-0"
       />
       <Button 
-        className="bg-coral hover:bg-coral-hover text-white"
+        className="bg-codeium hover:bg-codeium-hover text-black font-semibold"
         onClick={handleIngest}
       >
         Ingest

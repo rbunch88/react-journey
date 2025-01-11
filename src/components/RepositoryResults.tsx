@@ -50,59 +50,59 @@ export function RepositoryResults({
 
   return (
     <div className="w-full space-y-6 mt-8">
-      <Card className="bg-[#fff8e7] border-none p-6">
+      <Card className="bg-secondary border-gray-800 p-6">
         <div className="space-y-2">
-          <p className="font-mono">Repository: {repoName}</p>
-          <p className="font-mono">Files analyzed: {filesAnalyzed}</p>
-          <p className="font-mono">Estimated tokens: {estimatedTokens}</p>
+          <p className="font-mono text-foreground">Repository: {repoName}</p>
+          <p className="font-mono text-foreground">Files analyzed: {filesAnalyzed}</p>
+          <p className="font-mono text-foreground">Estimated tokens: {estimatedTokens}</p>
         </div>
       </Card>
 
       <div className="flex gap-2">
         <Button
           onClick={handleDownload}
-          className="bg-[#ffb56b] hover:bg-[#ff9f47] text-black font-semibold"
+          className="bg-codeium hover:bg-codeium-hover text-black font-semibold"
         >
-          <Download className="w-4 h-4" /> Download
+          <Download className="w-4 h-4 mr-2" /> Download
         </Button>
         <Button
           onClick={() => handleCopy(directoryStructure + "\n\n" + filesContent, "All content")}
-          className="bg-[#ffb56b] hover:bg-[#ff9f47] text-black font-semibold"
+          className="bg-codeium hover:bg-codeium-hover text-black font-semibold"
         >
-          <Copy className="w-4 h-4" /> Copy all
+          <Copy className="w-4 h-4 mr-2" /> Copy all
         </Button>
       </div>
 
       <div className="space-y-4">
         <div className="flex justify-between items-center">
-          <h3 className="text-lg font-semibold">Directory Structure</h3>
+          <h3 className="text-lg font-semibold text-foreground">Directory Structure</h3>
           <Button
             onClick={() => handleCopy(directoryStructure, "Directory structure")}
-            className="bg-[#ffb56b] hover:bg-[#ff9f47] text-black font-semibold"
+            className="bg-codeium hover:bg-codeium-hover text-black font-semibold"
           >
-            <Copy className="w-4 h-4" /> Copy
+            <Copy className="w-4 h-4 mr-2" /> Copy
           </Button>
         </div>
-        <Card className="border-none">
-          <ScrollArea className="h-[200px] w-full rounded-md bg-[#fff8e7] p-4">
-            <pre className="font-mono text-sm">{directoryStructure}</pre>
+        <Card className="border-gray-800">
+          <ScrollArea className="h-[200px] w-full rounded-md bg-secondary p-4">
+            <pre className="font-mono text-sm text-foreground">{directoryStructure}</pre>
           </ScrollArea>
         </Card>
       </div>
 
       <div className="space-y-4">
         <div className="flex justify-between items-center">
-          <h3 className="text-lg font-semibold">Files Content</h3>
+          <h3 className="text-lg font-semibold text-foreground">Files Content</h3>
           <Button
             onClick={() => handleCopy(filesContent, "Files content")}
-            className="bg-[#ffb56b] hover:bg-[#ff9f47] text-black font-semibold"
+            className="bg-codeium hover:bg-codeium-hover text-black font-semibold"
           >
-            <Copy className="w-4 h-4" /> Copy
+            <Copy className="w-4 h-4 mr-2" /> Copy
           </Button>
         </div>
-        <Card className="border-none">
-          <ScrollArea className="h-[200px] w-full rounded-md bg-[#fff8e7] p-4">
-            <pre className="font-mono text-sm">{filesContent}</pre>
+        <Card className="border-gray-800">
+          <ScrollArea className="h-[200px] w-full rounded-md bg-secondary p-4">
+            <pre className="font-mono text-sm text-foreground">{filesContent}</pre>
           </ScrollArea>
         </Card>
       </div>
